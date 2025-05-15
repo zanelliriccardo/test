@@ -1,20 +1,23 @@
 # Core Data & Computation
-numpy==1.26.4          # Modern NumPy for Py3.12 (with AVX2 support)
-pandas==2.2.1          # Latest stable Pandas
-scipy==1.13.0          # Requires NumPy >=1.22.4
+numpy==1.26.4          # Modern NumPy for Py3.12 (AVX2 optimized)
+pandas==2.2.1          # Latest stable Pandas with Excel support
+scipy==1.13.0          # Scientific computing
 
 # Streamlit + Dependencies
 streamlit==1.32.2
-protobuf==4.25.3       # Avoids version conflicts with Streamlit
+protobuf==4.25.3       # Prevents version conflicts
 
 # Visualization
-plotly==5.18.0         # Modern Plotly (compatible with all other packages)
-kaleido==0.2.1         # Required for static Plotly image export
+plotly==5.18.0         # Interactive charts
+kaleido==0.2.1         # Static plot export
 
-# Date/Time Handling (for datetime imports)
-python-dateutil==2.9.0 # Pandas dependency
+# Excel Support
+openpyxl==3.1.2        # Required for pd.read_excel()/to_excel()
+
+# Date/Time Handling
+python-dateutil==2.9.0 # Essential for Pandas datetime
 pytz==2024.1           # Timezone support
-tzdata==2024.1         # IANA timezone DB (Windows compatibility)
+tzdata==2024.1         # IANA timezone database
 
-# File Operations (os/shutil/glob)
-pathlib2==2.3.7.post1  # Backport if needed (else remove)
+# File Operations
+pathlib2==2.3.7.post1  # Backport if needed (safe to remove in Py3.12+)
