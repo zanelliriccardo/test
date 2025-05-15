@@ -13,6 +13,8 @@ kaleido==0.2.1         # Static plot export
 
 # Excel Support
 openpyxl==3.1.2        # Required for pd.read_excel()/to_excel()
+xlrd==2.0.1   # For legacy .xls files
+xlsxwriter==3.2.0  # Advanced Excel formattings
 
 # Date/Time Handling
 python-dateutil==2.9.0 # Essential for Pandas datetime
