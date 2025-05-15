@@ -256,8 +256,6 @@ def calculate_supply_time_weights(sap_amos):
         .astype(float)
         .fillna(0)
     )
-    sap_amos.to_excel('supp_tyme.xlsx')
-    
     return sap_amos
 
 def calculate_criticality_score(sap_amos, vessel_name):
@@ -374,7 +372,6 @@ def merge_all_data(stocks, consumption, sap_amos_criticality, prices):
         .fillna({'class': 'Minor'})
     )
 
-    merged.to_excel('merged.xlsx')
     
     return merged
 
@@ -399,13 +396,13 @@ def prepare_merged_data(merged):
             outstanding = (
                 merged['Outstanding Qty PO'] + 
                 merged['Outstanding Qty TO']
-            ) / 1000000
+            ) / 1000
         )
         .assign(
             stocks_plus_outstanding = (
                 merged['total stocks/1000'] + 
-                merged['Outstanding Qty PO']/1000000 + 
-                merged['Outstanding Qty TO']/1000000
+                merged['Outstanding Qty PO']/1000 + 
+                merged['Outstanding Qty TO']/1000
             )
         )
         .assign(
