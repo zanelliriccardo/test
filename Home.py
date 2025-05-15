@@ -403,7 +403,7 @@ if st.session_state.output_df is not None:
             # Save each table to a separate sheet
             for sheet_name in config_data.sheet_names:
                 config_data.parse(sheet_name).to_excel(writer, sheet_name=sheet_name, index=False)
-            writer.save()
+
     
     current_date = datetime.now().strftime("%Y%m%d %H:%M")
     filename = f"{vessel_name}_{current_date}_analysis_with_config.xlsx"
